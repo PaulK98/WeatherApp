@@ -1,0 +1,54 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!-- Code without CSS Bootstrap
+    <div class="text-center border">
+    <h1 class="display-4">Welcome to Midnight's Weather App</h1>
+    <br />
+    <form method="post">
+        <label>City: </label>
+        <input type="text" name="City" id="City"/>
+        <button type="submit">Get Data</button>
+    </form>
+
+    <p>@Model.ErrorMessage</p>
+    <p>City: @Model.City</p>
+    <p>Country: @Model.Country</p>
+    <p>Temperature: @Model.Temp</p>
+    <img src="@Model.Icon" alt="icon of weather" />
+    <p>Description: @Model.Description</p>
+</div>
+-->
+<!--Code with CSS Bootstrap classes-->
+<div class="container mt-5">
+    <div class="text-center border p-4 rounded shadow">
+        <h1 class="display-4 mb-4">Welcome to Midnight's Weather App</h1>
+        <form method="post" class="form-inline justify-content-center">
+            <div class="form-group mb-2">
+                <input type="text" class="form-control" name="City" id="City" placeholder="Enter city name" />
+            </div>
+            <button type="submit" class="btn btn-primary mb-2 ml-2">Get Data</button>
+        </form>
+
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="alert alert-danger mt-3" role="alert">
+                @Model.ErrorMessage
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.City))
+        {
+            <div class="mt-4">
+                <p class="h5">City: @Model.City</p>
+                <p class="h5">Country: @Model.Country</p>
+                <p class="h5">Temperature: @Model.Temp &deg;C</p>
+                <img src="@Model.Icon" alt="Weather icon" class="img-fluid my-3" />
+                <p class="h5">Description: @Model.Description</p>
+            </div>
+        }
+    </div>
+</div>
