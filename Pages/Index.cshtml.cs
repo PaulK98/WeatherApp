@@ -33,6 +33,12 @@ namespace WeatherApp.Pages
         public String Description { get; set; }
         [BindProperty]
         public String Icon { get; set; }
+        [BindProperty]
+        public String FeelsLike { get; set; }
+        [BindProperty]
+        public String Humidity { get; set; }
+        [BindProperty]
+        public String WindSpeed { get; set; }
 
         public string ErrorMessage { get; set; }
 
@@ -44,6 +50,7 @@ namespace WeatherApp.Pages
                 return Page();
             }
 
+            //Your API Key here
             string apiKey = "24e8015d53455d1f1ae07f78d3512b26";
             string url = $"https://api.openweathermap.org/data/2.5/weather?q={City}&units=metric&appid={apiKey}";
 
@@ -66,7 +73,9 @@ namespace WeatherApp.Pages
                     Description = data.weather[0].description;
                     string icon_code = data.weather[0].icon;
                     Icon = $"http://openweathermap.org/img/wn/{icon_code}.png";
-                    
+                    FeelsLike = data.main.feels_like.ToString();
+                    Humidity = data.main.humidity;
+                    WindSpeed = data.wind.speed.ToString();
                 }
             }
             catch (HttpRequestException)

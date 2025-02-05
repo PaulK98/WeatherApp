@@ -30,7 +30,7 @@
             <div class="form-group mb-2">
                 <input type="text" class="form-control" name="City" id="City" placeholder="Enter city name" />
             </div>
-            <button type="submit" class="btn btn-primary mb-2 ml-2">Get Data</button>
+            <button type="submit" class="btn btn-primary mb-2 ms-2">Get Data</button>
         </form>
 
         @if (!string.IsNullOrEmpty(Model.ErrorMessage))
@@ -42,13 +42,30 @@
 
         @if (!string.IsNullOrEmpty(Model.City))
         {
-            <div class="mt-4">
-                <p class="h5">City: @Model.City</p>
-                <p class="h5">Country: @Model.Country</p>
-                <p class="h5">Temperature: @Model.Temp &deg;C</p>
-                <img src="@Model.Icon" alt="Weather icon" class="img-fluid my-3" />
-                <p class="h5">Description: @Model.Description</p>
+            <div class="card mt-4 shadow-sm">
+                <div class="card-header text-white text-center" style="background: linear-gradient(135deg, #4e73df, #a1c4fd);">
+                    Weather in @Model.City, @Model.Country
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <!-- Left column for weather icon -->
+                        <div class="col-md-4 d-flex align-items-center justify-content-center" style="min-height: 150px;">
+                            <img src="@Model.Icon" alt="Weather icon" class="img-fluid" style="min-width: 100px;" />
+                        </div>
+                        <!-- Right column for weather details -->
+                        <div class="col-md-8">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Temperature: @Model.Temp &deg;C</li>
+                                <li class="list-group-item">Feels Like: @Model.FeelsLike &deg;C</li>
+                                <li class="list-group-item">Humidity: @Model.Humidity %</li>
+                                <li class="list-group-item">Wind Speed: @Model.WindSpeed km/h</li>
+                                <li class="list-group-item">Description: @Model.Description</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         }
     </div>
 </div>
+
