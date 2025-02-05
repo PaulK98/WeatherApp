@@ -51,7 +51,7 @@ namespace WeatherApp.Pages
             }
 
             //Your API Key here
-            string apiKey = "24e8015d53455d1f1ae07f78d3512b26";
+            string apiKey = "";
             string url = $"https://api.openweathermap.org/data/2.5/weather?q={City}&units=metric&appid={apiKey}";
 
             try
