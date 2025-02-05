@@ -23,7 +23,7 @@ Welcome to **WeatherApp**, a web application built using ASP.NET Core Razor Page
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/YourUsername/YourRepoName.git
+   git clone https://github.com/paulk98/WeatherApp.git
 2. **Navigate to the project folder, restore dependencies and run the app::**
    
    ```bash
