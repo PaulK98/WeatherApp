@@ -16,6 +16,7 @@ Welcome to **WeatherApp**, a web application built using ASP.NET Core Razor Page
 - [.NET 9 SDK](https://dotnet.microsoft.com/download)
 - Visual Studio 2022 or Visual Studio Code
 - Replace the placeholder **apiKey** in the Index PageModel with your actual OpenWeatherMap API key.
+- -Install Newtonsoft.Json package from NuGet package manager.
 
 ### Installation
 
